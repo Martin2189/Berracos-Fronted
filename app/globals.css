@@ -1,0 +1,3297 @@
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #02060b;
+  color: #ffffff;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(2, 6, 11, 0.82),
+      rgba(2, 6, 11, 0.94)
+    ),
+    url("https://img.magnific.com/vector-premium/patron-costura-industria-barbero-es-monocromatico_153969-8939.jpg?semt=ais_hybrid&w=740&q=80")
+      center / cover fixed;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: #2fa4ff;
+  color: #ffffff;
+}
+
+.app {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px;
+  background: rgba(2, 6, 11, 0.92);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+}
+
+.navbar-logo {
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.navbar-logo span {
+  color: #2fa4ff;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links button {
+  position: relative;
+  border: none;
+  background: transparent;
+  color: #a9b7c6;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+}
+
+.navbar-links button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 0;
+  height: 2px;
+  background: #2fa4ff;
+  transition: 0.3s ease;
+}
+
+.navbar-links button:hover,
+.navbar-links button.activo {
+  color: #ffffff;
+}
+
+.navbar-links button:hover::after,
+.navbar-links button.activo::after {
+  width: 100%;
+}
+
+.navbar-login {
+  border: 1px solid #2fa4ff;
+  background: transparent;
+  color: #ffffff;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.navbar-login:hover {
+  background: #2fa4ff;
+  color: #02060b;
+}
+
+.seccion {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1400px;
+  min-height: calc(100vh - 75px);
+  margin: 0 auto;
+  padding: 140px 60px 60px;
+}
+
+.encabezado {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.encabezado span {
+  display: block;
+  margin-bottom: 10px;
+  color: #2fa4ff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 4px;
+}
+
+.encabezado h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 42px;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.encabezado p {
+  margin-top: 12px;
+  color: #8fa3b8;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 28px;
+  border: 1px solid #2fa4ff;
+  border-radius: 8px;
+  background: #2fa4ff;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  transition: 0.3s ease;
+}
+
+.boton:hover {
+  background: transparent;
+  color: #2fa4ff;
+  transform: translateY(-3px);
+}
+
+.hero {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: transparent;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -40px;
+  z-index: 0;
+  background-image: url("https://img.magnific.com/vector-premium/patron-costura-industria-barbero-es-monocromatico_153969-8939.jpg?semt=ais_hybrid&w=740&q=80");
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  filter: blur(5px);
+  transform: scale(1.06);
+  opacity: 0.25;
+}
+
+.gif-fondo {
+  position: absolute;
+  inset: -100px;
+  z-index: 1;
+  overflow: hidden;
+  opacity: 0.08;
+  filter: blur(12px) grayscale(0.25);
+  transform: scale(1.08);
+  pointer-events: none;
+}
+
+.gif-fondo iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%) scale(1.3);
+  border: none;
+  pointer-events: none;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(2, 10, 18, 0.25),
+      rgba(2, 6, 11, 0.55)
+    ),
+    linear-gradient(
+      90deg,
+      rgba(1, 7, 13, 0.6),
+      rgba(1, 7, 13, 0.25),
+      rgba(1, 7, 13, 0.6)
+    );
+}
+
+.hero-contenido {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 1000px;
+  padding: 120px 30px;
+  text-align: center;
+}
+
+.hero-etiqueta {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 8px 15px;
+  border: 1px solid rgba(47, 164, 255, 0.35);
+  border-radius: 30px;
+  background: rgba(47, 164, 255, 0.08);
+  color: #2fa4ff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.hero h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(55px, 9vw, 125px);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -5px;
+  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+}
+
+.hero h1 span {
+  color: #2fa4ff;
+}
+
+.hero p {
+  max-width: 650px;
+  margin: 30px auto;
+  color: #b4c1ce;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.hero-botones {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.hero-boton-secundario {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.hero-boton-secundario:hover {
+  border-color: #2fa4ff;
+  background: #2fa4ff;
+  color: #ffffff;
+}
+
+.hero-conexiones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 35px;
+}
+
+.hero-conexiones button {
+  min-width: 150px;
+  min-height: 58px;
+  padding: 10px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border: 1px solid rgba(47, 164, 255, 0.22);
+  border-radius: 12px;
+  background: rgba(4, 15, 25, 0.75);
+  color: #9fb1c2;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.hero-conexiones button span {
+  color: #2fa4ff;
+  font-size: 21px;
+  line-height: 1;
+}
+
+.hero-conexiones button:hover {
+  transform: translateY(-5px);
+  border-color: #2fa4ff;
+  background: rgba(47, 164, 255, 0.12);
+  color: #ffffff;
+  box-shadow: 0 10px 30px rgba(47, 164, 255, 0.12);
+}
+
+.inicio-navegacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 35px;
+  padding: 0 20px;
+}
+
+.inicio-navegacion button {
+  min-width: 145px;
+  padding: 13px 20px;
+  border: 1px solid rgba(47, 164, 255, 0.3);
+  border-radius: 8px;
+  background: rgba(7, 21, 37, 0.75);
+  color: #a9b7c6;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.inicio-navegacion button:hover {
+  background: #2fa4ff;
+  border-color: #2fa4ff;
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+.inicio-navegacion .inicio-reservar {
+  background: #2fa4ff;
+  border-color: #2fa4ff;
+  color: #ffffff;
+}
+
+.inicio-navegacion .inicio-reservar:hover {
+  background: transparent;
+  color: #2fa4ff;
+}
+
+.servicios,
+.barberos,
+.cortes,
+.reservacion,
+.calendario-seccion,
+.ubicacion-seccion,
+.login-seccion {
+  background: transparent;
+}
+
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.servicio-card {
+  position: relative;
+  padding: 35px;
+  overflow: hidden;
+  background: #0b1c2e;
+  border: 1px solid rgba(47, 164, 255, 0.15);
+  border-radius: 18px;
+  transition: 0.3s ease;
+}
+
+.servicio-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(47, 164, 255, 0.6);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+}
+
+.servicio-icono {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  border-radius: 50%;
+  background: rgba(47, 164, 255, 0.1);
+  border: 1px solid rgba(47, 164, 255, 0.25);
+  color: #2fa4ff;
+  font-size: 24px;
+}
+
+.servicio-card h3 {
+  margin: 0 0 12px;
+  color: #ffffff;
+  font-size: 21px;
+}
+
+.servicio-card p {
+  margin: 0;
+  color: #8fa3b8;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.barberos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.barbero-card {
+  position: relative;
+  overflow: hidden;
+  background: #081522;
+  border: 1px solid rgba(47, 164, 255, 0.18);
+  border-radius: 20px;
+  transition: 0.3s ease;
+}
+
+.barbero-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(47, 164, 255, 0.65);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.barbero-imagen {
+  position: relative;
+  height: 330px;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      180deg,
+      transparent 40%,
+      rgba(2, 6, 11, 0.9)
+    ),
+    url("https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=800&q=80")
+      center / cover;
+}
+
+.barbero-info {
+  padding: 25px;
+}
+
+.barbero-info span {
+  color: #2fa4ff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.barbero-info h3 {
+  margin: 7px 0;
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.barbero-info p {
+  margin: 0;
+  color: #8fa3b8;
+  font-size: 14px;
+}
+
+.cortes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 50px;
+}
+
+.corte-card {
+  position: relative;
+  min-height: 280px;
+  padding: 30px;
+  overflow: hidden;
+  background: #0d243c;
+  border: 1px solid rgba(47, 164, 255, 0.25);
+  border-radius: 20px;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.corte-card::before {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: -80px;
+  right: -80px;
+  background: rgba(47, 164, 255, 0.15);
+  border-radius: 50%;
+  filter: blur(5px);
+}
+
+.corte-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #2fa4ff;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.corte-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(47, 164, 255, 0.8);
+  box-shadow: 0 20px 50px rgba(47, 164, 255, 0.18);
+}
+
+.corte-card:hover::after {
+  opacity: 1;
+}
+
+.corte-numero {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 70px;
+  color: #2fa4ff;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.corte-contenido {
+  position: relative;
+  z-index: 1;
+}
+
+.corte-contenido h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.corte-contenido p {
+  margin: 12px 0 25px;
+  color: #91a4b8;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.corte-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.corte-footer strong {
+  color: #ffffff;
+  font-size: 22px;
+}
+
+.corte-footer span {
+  color: #2fa4ff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.reservacion-contenedor {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.reservacion-formulario {
+  padding: 40px;
+  background: #081522;
+  border: 1px solid rgba(47, 164, 255, 0.18);
+  border-radius: 20px;
+}
+
+.formulario {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.campo-full {
+  grid-column: 1 / -1;
+}
+
+.campo label {
+  color: #b6c4d2;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.campo input,
+.campo select {
+  width: 100%;
+  height: 48px;
+  padding: 0 15px;
+  outline: none;
+  background: rgba(4, 11, 18, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #ffffff;
+  transition: 0.3s ease;
+}
+
+.campo input:focus,
+.campo select:focus {
+  border-color: #2fa4ff;
+  box-shadow: 0 0 0 3px rgba(47, 164, 255, 0.08);
+}
+
+.campo select option {
+  background: #071525;
+  color: #ffffff;
+}
+
+.formulario .boton {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.mensaje-exito {
+  margin-top: 20px;
+  padding: 15px 20px;
+  border: 1px solid rgba(47, 164, 255, 0.3);
+  border-radius: 10px;
+  background: rgba(47, 164, 255, 0.08);
+  color: #65baff;
+  font-size: 14px;
+  text-align: center;
+}
+
+.disponibilidad {
+  padding: 40px;
+  background: #081522;
+  border: 1px solid rgba(47, 164, 255, 0.18);
+  border-radius: 20px;
+}
+
+.disponibilidad h3 {
+  margin: 0 0 8px;
+  color: #ffffff;
+  font-size: 25px;
+}
+
+.disponibilidad > p {
+  margin: 0 0 25px;
+  color: #8fa3b8;
+  font-size: 14px;
+}
+
+.calendario-seccion {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  min-height: calc(100vh - 75px);
+  padding: 110px 5% 80px;
+}
+
+.calendario-encabezado {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.calendario-encabezado > span {
+  display: block;
+  margin-bottom: 12px;
+  color: #2fa4ff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 4px;
+}
+
+.calendario-encabezado h1 {
+  margin: 0 0 12px;
+  color: #ffffff;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.calendario-encabezado p {
+  margin: 0;
+  color: #8fa2b5;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.calendario-contenedor {
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+  gap: 30px;
+  align-items: start;
+}
+
+.calendario-principal,
+.calendario-horarios {
+  width: 100%;
+  min-width: 0;
+  padding: 32px;
+  border: 1px solid rgba(47, 164, 255, 0.22);
+  border-radius: 14px;
+  background: #07121e;
+  box-sizing: border-box;
+}
+
+.calendario-horarios {
+  min-height: 520px;
+  background: #0c2339;
+}
+
+.calendario-navegacion {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50px minmax(0, 1fr) 50px;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.calendario-navegacion > div {
+  min-width: 0;
+  text-align: center;
+}
+
+.calendario-navegacion > div > span {
+  color: #2fa4ff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.calendario-navegacion h2 {
+  margin: 7px 0 0;
+  color: #ffffff;
+  font-size: 21px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.calendario-flecha {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid rgba(47, 164, 255, 0.35);
+  border-radius: 9px;
+  background: rgba(11, 29, 47, 0.88);
+  color: #2fa4ff;
+  font-size: 25px;
+  line-height: 1;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.calendario-flecha:hover {
+  background: #2fa4ff;
+  color: #02060b;
+}
+
+.calendario-semana {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 9px;
+  margin-bottom: 9px;
+}
+
+.calendario-semana span {
+  min-width: 0;
+  padding: 8px 0;
+  color: #2fa4ff;
+  font-size: 11px;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.calendario-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.calendario-dia {
+  width: 100%;
+  min-width: 0;
+  min-height: 78px;
+  box-sizing: border-box;
+  padding: 10px 6px;
+  margin: 0;
+  border-radius: 11px;
+  font: inherit;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.calendario-dia-disponible {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #1c354a;
+  background: #0c1c2d;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.calendario-dia-disponible:hover {
+  border-color: #2fa4ff;
+  background: #102b43;
+  transform: translateY(-2px);
+}
+
+.calendario-dia-disponible span,
+.calendario-dia-pasado span {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.calendario-dia-disponible small {
+  margin-top: 7px;
+  color: #2fa4ff;
+  font-size: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.calendario-dia-pasado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #15222e;
+  background: #08111a;
+  color: #394653;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.calendario-dia-hoy {
+  border-color: #2fa4ff;
+  box-shadow: inset 0 0 0 1px rgba(47, 164, 255, 0.2);
+}
+
+.calendario-dia-hoy span {
+  color: #2fa4ff;
+}
+
+.calendario-dia-seleccionado {
+  border-color: #2fa4ff;
+  background: #2fa4ff;
+  color: #02060b;
+  box-shadow: 0 8px 25px rgba(47, 164, 255, 0.2);
+}
+
+.calendario-dia-seleccionado span,
+.calendario-dia-seleccionado small {
+  color: #02060b;
+}
+
+.calendario-dia-vacio {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.calendario-leyenda {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 22px;
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid #172938;
+}
+
+.calendario-leyenda div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #8799aa;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.leyenda-punto {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.leyenda-disponible {
+  background: #2fa4ff;
+}
+
+.leyenda-hoy {
+  border: 1px solid #2fa4ff;
+  background: transparent;
+}
+
+.leyenda-pasado {
+  background: #394653;
+}
+
+.calendario-sin-seleccion {
+  width: 100%;
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.calendario-sin-seleccion > span,
+.horarios-encabezado > span,
+.horario-confirmado > span {
+  color: #2fa4ff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.calendario-sin-seleccion h2 {
+  margin: 14px 0 12px;
+  color: #ffffff;
+  font-size: 28px;
+}
+
+.calendario-sin-seleccion p {
+  max-width: 350px;
+  margin: 0;
+  color: #8fa2b5;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.horarios-encabezado {
+  margin-bottom: 28px;
+}
+
+.horarios-encabezado h2 {
+  margin: 10px 0 8px;
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.horarios-encabezado p {
+  margin: 0;
+  color: #8fa2b5;
+  font-size: 13px;
+}
+
+.horarios-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.horario-boton {
+  min-width: 0;
+  min-height: 65px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 8px;
+  border: 1px solid #21415a;
+  border-radius: 8px;
+  background: #091827;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.horario-boton:hover {
+  border-color: #2fa4ff;
+  background: #102b43;
+}
+
+.horario-boton small {
+  color: #2fa4ff;
+  font-size: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.horario-ocupado {
+  border-color: #172530;
+  background: #081018;
+  color: #465461;
+  cursor: not-allowed;
+}
+
+.horario-ocupado small {
+  color: #465461;
+}
+
+.horario-seleccionado {
+  border-color: #2fa4ff;
+  background: #2fa4ff;
+  color: #02060b;
+}
+
+.horario-seleccionado small {
+  color: #02060b;
+}
+
+.horario-confirmado {
+  margin-top: 25px;
+  padding: 20px;
+  border: 1px solid rgba(47, 164, 255, 0.3);
+  border-radius: 10px;
+  background: rgba(47, 164, 255, 0.07);
+  text-align: center;
+}
+
+.horario-confirmado strong {
+  display: block;
+  margin: 8px 0;
+  color: #ffffff;
+  font-size: 32px;
+}
+
+.horario-confirmado p {
+  margin: 0 0 18px;
+  color: #8fa2b5;
+  font-size: 12px;
+}
+
+.horario-confirmado button {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 6px;
+  background: #2fa4ff;
+  color: #02060b;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.horario-confirmado button:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
+}
+
+.calendario-acciones {
+  margin-top: 25px;
+  padding: 30px;
+  text-align: center;
+  background: #081522;
+  border: 1px solid rgba(47, 164, 255, 0.18);
+  border-radius: 18px;
+}
+
+.calendario-acciones h3 {
+  margin: 0 0 10px;
+  color: #ffffff;
+  font-size: 22px;
+}
+
+.calendario-acciones p {
+  max-width: 550px;
+  margin: 0 auto 20px;
+  color: #8fa3b8;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.boton-secundario {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.boton-secundario:hover {
+  background: #2fa4ff;
+  border-color: #2fa4ff;
+  color: #ffffff;
+}
+
+.confirmacion {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 45px;
+  background: #07101a;
+  border: 1px solid #16283a;
+  border-radius: 18px;
+  text-align: center;
+}
+
+.confirmacion-icono {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #2fa4ff;
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.confirmacion h3 {
+  margin: 0 0 12px;
+  font-size: 28px;
+}
+
+.confirmacion p {
+  margin: 0 0 30px;
+  color: #9caec0;
+}
+
+.resumen-cita {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.resumen-cita div {
+  padding: 18px;
+  background: #02060b;
+  border: 1px solid #16283a;
+}
+
+.resumen-cita span {
+  display: block;
+  margin-bottom: 7px;
+  color: #2fa4ff;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.resumen-cita strong {
+  font-size: 16px;
+}
+
+.boton-inicio {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 30px;
+  border: 1px solid #2fa4ff;
+  border-radius: 8px;
+  background: #2fa4ff;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+}
+
+.boton-inicio:hover {
+  background: transparent;
+  color: #2fa4ff;
+  transform: translateY(-3px);
+}
+
+.ubicacion-card {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  min-height: 380px;
+  margin-top: 50px;
+  overflow: hidden;
+  background: #071525;
+  border: 1px solid rgba(47, 164, 255, 0.2);
+  border-radius: 22px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.ubicacion-info {
+  display: flex;
+  gap: 25px;
+  align-items: flex-start;
+  padding: 50px 45px;
+}
+
+.ubicacion-icono {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: rgba(31, 145, 255, 0.12);
+  border: 1px solid rgba(31, 145, 255, 0.3);
+  color: #2fa4ff;
+  font-size: 27px;
+}
+
+.ubicacion-label {
+  color: #2fa4ff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.ubicacion-info h3 {
+  margin: 8px 0 20px;
+  color: #ffffff;
+  font-size: 27px;
+}
+
+.ubicacion-info p {
+  margin: 5px 0;
+  color: #91a4b8;
+  font-size: 14px;
+}
+
+.horario {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.horario strong {
+  margin-bottom: 5px;
+  color: #ffffff;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.horario span {
+  color: #91a4b8;
+  font-size: 14px;
+}
+
+.ubicacion-mapa {
+  position: relative;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      rgba(2, 13, 25, 0.55),
+      rgba(2, 13, 25, 0.8)
+    ),
+    url("https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1200&q=80")
+      center / cover;
+}
+
+.ubicacion-mapa::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.04) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.04) 1px,
+      transparent 1px
+    );
+  background-size: 40px 40px;
+}
+
+.ubicacion-mapa::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(47, 164, 255, 0.12);
+  filter: blur(80px);
+}
+
+.mapa-overlay {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px 40px;
+  background: rgba(4, 18, 32, 0.9);
+  border: 1px solid rgba(47, 164, 255, 0.35);
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.mapa-overlay span {
+  margin-bottom: 8px;
+  font-size: 35px;
+}
+
+.mapa-overlay strong {
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.mapa-overlay small {
+  margin-top: 5px;
+  color: #8fa3b8;
+}
+
+.boton-ubicacion {
+  display: flex;
+  width: fit-content;
+  margin: 25px auto 0;
+}
+
+.inicio-accesos {
+  width: 100%;
+  padding: 70px 30px;
+  box-sizing: border-box;
+  background: #081522;
+  border-top: 1px solid rgba(47, 164, 255, 0.12);
+  border-bottom: 1px solid rgba(47, 164, 255, 0.12);
+}
+
+.inicio-accesos-contenido {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.inicio-accesos-contenido > span {
+  display: block;
+  margin-bottom: 10px;
+  color: #2fa4ff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.inicio-accesos-contenido h2 {
+  margin: 0 0 12px;
+  color: #ffffff;
+  font-size: 34px;
+  font-weight: 900;
+}
+
+.inicio-accesos-contenido p {
+  max-width: 600px;
+  margin: 0 auto 30px;
+  color: #8fa3b8;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.inicio-accesos-botones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.inicio-acceso {
+  min-width: 150px;
+  min-height: 48px;
+  padding: 0 22px;
+  border: 1px solid rgba(47, 164, 255, 0.35);
+  border-radius: 8px;
+  background: #0a1d2f;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.inicio-acceso:hover {
+  transform: translateY(-3px);
+  border-color: #2fa4ff;
+  background: #2fa4ff;
+  color: #ffffff;
+}
+
+.inicio-acceso-principal {
+  background: #2fa4ff;
+  border-color: #2fa4ff;
+}
+
+.inicio-acceso-principal:hover {
+  background: transparent;
+  color: #2fa4ff;
+}
+
+.footer {
+  position: relative;
+  z-index: 10;
+  padding: 70px 60px 30px;
+  background: rgba(1, 4, 7, 0.9);
+  border-top: 1px solid rgba(47, 164, 255, 0.12);
+  backdrop-filter: blur(12px);
+}
+
+.footer-contenedor {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 60px;
+}
+
+.footer-logo {
+  margin-bottom: 15px;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.footer-logo span {
+  color: #2fa4ff;
+}
+
+.footer-descripcion {
+  max-width: 400px;
+  color: #74879a;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.footer h3 {
+  margin-bottom: 18px;
+  color: #ffffff;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links button {
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #74879a;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.footer-links button:hover {
+  color: #2fa4ff;
+  transform: translateX(4px);
+}
+
+.footer-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-contacto p {
+  margin: 0;
+  color: #74879a;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.footer-bottom {
+  width: 100%;
+  max-width: 1300px;
+  margin: 55px auto 0;
+  padding-top: 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #536473;
+  font-size: 11px;
+}
+
+.login-seccion {
+  min-height: calc(100vh - 75px);
+  padding: 110px 20px 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-contenedor {
+  width: 100%;
+  max-width: 460px;
+  padding: 45px;
+  background: #070d15;
+  border: 1px solid rgba(47, 164, 255, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+.login-encabezado {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.login-encabezado span {
+  color: #2fa4ff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.login-encabezado h1 {
+  margin: 12px 0;
+  color: #ffffff;
+  font-size: 30px;
+  letter-spacing: 2px;
+}
+
+.login-encabezado p {
+  margin: 0;
+  color: #8995a3;
+  font-size: 14px;
+}
+
+.login-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.login-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.login-campo label {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.login-campo input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 15px;
+  background: rgba(2, 6, 11, 0.9);
+  border: 1px solid #1d2b3a;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.login-campo input:focus {
+  border-color: #2fa4ff;
+  box-shadow: 0 0 0 2px rgba(47, 164, 255, 0.1);
+}
+
+.login-campo input::placeholder {
+  color: #536170;
+}
+
+.login-recuperar {
+  align-self: flex-end;
+  margin-top: -8px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #2fa4ff;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.login-boton {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 6px;
+  background: #2fa4ff;
+  color: #02060b;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.login-boton:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
+}
+
+.login-separador {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 25px 0;
+  color: #536170;
+  font-size: 12px;
+}
+
+.login-separador::before,
+.login-separador::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #1d2b3a;
+}
+
+.login-google {
+  width: 100%;
+  padding: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #2a3948;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #111111;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.login-google:hover {
+  background: #e9edf1;
+  transform: translateY(-2px);
+}
+
+.login-google-icon {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.login-cambio {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.login-cambio span {
+  color: #687583;
+  font-size: 11px;
+}
+
+.login-cambio button {
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #2fa4ff;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.login-regresar {
+  width: 100%;
+  margin-top: 30px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #687583;
+  font-size: 11px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.login-regresar:hover {
+  color: #ffffff;
+}
+
+.login-mensaje {
+  margin-top: 18px;
+  padding: 13px 15px;
+  border: 1px solid rgba(47, 164, 255, 0.25);
+  border-radius: 7px;
+  background: rgba(47, 164, 255, 0.08);
+  color: #8fcfff;
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+@media (max-width: 1100px) {
+  .seccion {
+    padding: 120px 35px 50px;
+  }
+
+  .hero h1 {
+    font-size: 85px;
+  }
+
+  .cortes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .servicios-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .barberos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .reservacion-contenedor {
+    grid-template-columns: 1fr;
+  }
+
+  .ubicacion-card {
+    grid-template-columns: 1fr;
+  }
+
+  .ubicacion-mapa {
+    min-height: 330px;
+  }
+
+  .footer-contenedor {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .calendario-contenedor {
+    max-width: 950px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .calendario-contenedor {
+    grid-template-columns: 1fr;
+  }
+
+  .calendario-horarios {
+    min-height: auto;
+  }
+
+  .calendario-sin-seleccion {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 700px) {
+
+  .seccion {
+    padding: 100px 20px 40px;
+  }
+
+  .encabezado {
+    margin-bottom: 35px;
+  }
+
+  .encabezado h2 {
+    font-size: 30px;
+  }
+
+  .encabezado p {
+    font-size: 14px;
+  }
+
+  .hero {
+    min-height: 100vh;
+  }
+
+  .hero-contenido {
+    padding: 100px 20px;
+  }
+
+  .hero h1 {
+    font-size: 55px;
+    letter-spacing: -3px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .hero-botones {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-botones .boton {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .gif-fondo {
+    opacity: 0.05;
+    filter: blur(10px) grayscale(0.3);
+  }
+
+  .hero-conexiones {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    max-width: 360px;
+    margin: 30px auto 0;
+  }
+
+  .hero-conexiones button {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .inicio-navegacion {
+    gap: 8px;
+    margin-top: 25px;
+  }
+
+  .inicio-navegacion button {
+    min-width: 125px;
+    padding: 11px 14px;
+    font-size: 10px;
+  }
+
+  .servicios-grid,
+  .barberos-grid,
+  .cortes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cortes-grid {
+    gap: 15px;
+  }
+
+  .corte-card {
+    min-height: 240px;
+    padding: 25px;
+  }
+
+  .corte-numero {
+    margin-bottom: 55px;
+  }
+
+  .formulario {
+    grid-template-columns: 1fr;
+  }
+
+  .campo-full {
+    grid-column: auto;
+  }
+
+  .reservacion-formulario,
+  .disponibilidad {
+    padding: 25px;
+  }
+
+  .formulario .boton {
+    grid-column: auto;
+  }
+
+  .calendario-seccion {
+    min-height: calc(100vh - 65px);
+    padding: 95px 15px 50px;
+  }
+
+  .calendario-encabezado {
+    margin-bottom: 30px;
+  }
+
+  .calendario-encabezado h1 {
+    font-size: 36px;
+  }
+
+  .calendario-encabezado p {
+    font-size: 14px;
+  }
+
+  .calendario-contenedor {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .calendario-principal,
+  .calendario-horarios {
+    padding: 18px;
+  }
+
+  .calendario-navegacion {
+    grid-template-columns: 42px minmax(0, 1fr) 42px;
+    gap: 8px;
+  }
+
+  .calendario-flecha {
+    width: 42px;
+    height: 42px;
+    font-size: 21px;
+  }
+
+  .calendario-navegacion h2 {
+    font-size: 17px;
+  }
+
+  .calendario-semana,
+  .calendario-grid {
+    gap: 5px;
+  }
+
+  .calendario-semana span {
+    padding: 6px 0;
+    font-size: 8px;
+  }
+
+  .calendario-dia {
+    min-height: 58px;
+    padding: 6px 2px;
+  }
+
+  .calendario-dia-disponible span,
+  .calendario-dia-pasado span {
+    font-size: 14px;
+  }
+
+  .calendario-dia-disponible small {
+    display: none;
+  }
+
+  .calendario-leyenda {
+    gap: 12px;
+    margin-top: 20px;
+    padding-top: 17px;
+  }
+
+  .calendario-leyenda div {
+    font-size: 9px;
+  }
+
+  .horarios-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .horario-boton {
+    min-height: 58px;
+  }
+
+  .calendario-acciones {
+    padding: 22px 15px;
+  }
+
+  .calendario-acciones h3 {
+    font-size: 20px;
+  }
+
+  .calendario-acciones .boton {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .ubicacion-info {
+    padding: 35px 25px;
+    gap: 18px;
+  }
+
+  .ubicacion-info h3 {
+    font-size: 22px;
+  }
+
+  .ubicacion-mapa {
+    min-height: 280px;
+  }
+
+  .mapa-overlay {
+    padding: 25px 30px;
+  }
+
+  .inicio-accesos {
+    padding: 55px 20px;
+  }
+
+  .inicio-accesos-contenido h2 {
+    font-size: 27px;
+  }
+
+  .inicio-accesos-botones {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .inicio-acceso {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .footer {
+    padding: 60px 20px 25px;
+  }
+
+  .footer-contenedor {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .confirmacion {
+    padding: 25px;
+  }
+
+  .resumen-cita {
+    grid-template-columns: 1fr;
+  }
+
+  .login-seccion {
+    padding: 100px 15px 60px;
+  }
+
+  .login-contenedor {
+    padding: 30px 22px;
+  }
+
+  .login-encabezado h1 {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 600px) {
+  .login-seccion {
+    padding: 100px 15px 60px;
+  }
+
+  .login-contenedor {
+    padding: 30px 22px;
+  }
+
+  .login-encabezado h1 {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 450px) {
+  .seccion {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .encabezado h2 {
+    font-size: 26px;
+  }
+
+  .hero h1 {
+    font-size: 45px;
+  }
+
+  .hero-conexiones {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .hero-conexiones button {
+    min-height: 52px;
+    font-size: 9px;
+  }
+
+  .hero-conexiones button span {
+    font-size: 18px;
+  }
+
+  .inicio-navegacion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    padding: 0;
+  }
+
+  .inicio-navegacion button {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .ubicacion-info {
+    flex-direction: column;
+  }
+
+  .ubicacion-icono {
+    width: 48px;
+    height: 48px;
+    font-size: 23px;
+  }
+
+  .corte-contenido h3 {
+    font-size: 21px;
+  }
+
+  .calendario-seccion {
+    padding: 90px 10px 45px;
+  }
+
+  .calendario-encabezado h1 {
+    font-size: 30px;
+  }
+
+  .calendario-principal,
+  .calendario-horarios {
+    padding: 14px;
+  }
+
+  .calendario-navegacion {
+    grid-template-columns: 36px minmax(0, 1fr) 36px;
+  }
+
+  .calendario-flecha {
+    width: 36px;
+    height: 36px;
+    font-size: 19px;
+  }
+
+  .calendario-navegacion h2 {
+    font-size: 15px;
+  }
+
+  .calendario-semana,
+  .calendario-grid {
+    gap: 3px;
+  }
+
+  .calendario-dia {
+    min-height: 48px;
+    padding: 4px 1px;
+  }
+
+  .calendario-dia-disponible span,
+  .calendario-dia-pasado span {
+    font-size: 13px;
+  }
+
+  .calendario-semana span {
+    font-size: 7px;
+  }
+
+  .horario-boton {
+    min-height: 58px;
+  }
+}
+
+
+/* ==================================
+   PAGINA PUBLICA DE BARBEROS
+================================== */
+
+.barberos-pagina {
+  width: 100%;
+  min-height: 100vh;
+  background: transparent;
+  color: #ffffff;
+  padding-bottom: 70px;
+}
+
+.barberos-hero {
+  text-align: center;
+  padding: 90px 20px 65px;
+  background: transparent;
+}
+
+.barberos-etiqueta {
+  color: #d6a84f;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 4px;
+}
+
+.barberos-hero h1 {
+  font-size: clamp(30px, 5vw, 52px);
+  font-weight: 900;
+  margin: 18px 0;
+  letter-spacing: 2px;
+}
+
+.barberos-hero p {
+  color: #bdbdbd;
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.barberos-contenedor {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 55px 25px;
+}
+
+.barberos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.barbero-card {
+  background: #202020;
+  border: 1px solid #383838;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.3s ease,
+              border-color 0.3s ease;
+}
+
+.barbero-card:hover {
+  transform: translateY(-7px);
+  border-color: #d6a84f;
+}
+
+.barbero-foto {
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    145deg,
+    #454545,
+    #171717
+  );
+}
+
+.barbero-foto span {
+  font-size: 100px;
+  font-weight: 900;
+  color: #d6a84f;
+}
+
+.barbero-informacion {
+  padding: 25px;
+}
+
+.barbero-etiqueta {
+  color: #d6a84f;
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 800;
+}
+
+.barbero-informacion h2 {
+  font-size: 27px;
+  margin: 12px 0 5px;
+}
+
+.barbero-informacion h3 {
+  font-size: 14px;
+  color: #d6a84f;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.barbero-informacion p {
+  color: #bdbdbd;
+  font-size: 14px;
+  line-height: 1.7;
+  min-height: 70px;
+}
+
+.barbero-boton {
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  border: none;
+  border-radius: 6px;
+  background: #d6a84f;
+  color: #111111;
+  font-weight: 900;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.barbero-boton:hover {
+  background: #f0c875;
+}
+
+@media (max-width: 850px) {
+  .barberos-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 550px) {
+  .barberos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .barberos-hero {
+    padding: 65px 20px 45px;
+  }
+
+  .barbero-foto {
+    height: 220px;
+  }
+}
+
+.mis-reservaciones-seccion {
+  min-height: 100vh;
+  padding: 90px 20px;
+  background: transparent;
+  color: #fff;
+}
+
+.mis-reservaciones-encabezado {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.mis-reservaciones-encabezado span {
+  color: #c9a44c;
+  letter-spacing: 4px;
+}
+
+.mis-reservaciones-encabezado h1 {
+  margin: 15px 0;
+}
+
+.mis-reservaciones-contenedor {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.mis-reservaciones-lista {
+  display: grid;
+  gap: 22px;
+}
+
+.reservacion-tarjeta {
+  padding: 25px;
+  background: #171717;
+  border: 1px solid #8f7134;
+  border-radius: 12px;
+}
+
+.reservacion-tarjeta-encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.reservacion-tarjeta-encabezado h2 {
+  color: #d6b45c;
+}
+
+.estado-reserva {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.estado-reserva.activa {
+  color: #65c98b;
+}
+
+.estado-reserva.cancelada {
+  color: #e07878;
+}
+
+.reservacion-datos {
+  line-height: 1.8;
+  margin: 20px 0;
+}
+
+.cancelar-reserva-boton {
+  padding: 12px 18px;
+  background: transparent;
+  border: 1px solid #bd5555;
+  color: #e47b7b;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.cancelar-reserva-boton:hover {
+  background: #bd5555;
+  color: white;
+}
+
+.sin-reservaciones {
+  text-align: center;
+  padding: 45px 20px;
+  background: #171717;
+  border: 1px solid #8f7134;
+  border-radius: 12px;
+}
+
+@media (max-width: 600px) {
+  .reservacion-tarjeta-encabezado {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* ==================================
+   IDENTIDAD AZUL - BARBEROS
+================================== */
+
+.barberos-etiqueta {
+  color: #2fa4ff;
+}
+
+.barbero-card {
+  background: #081522;
+  border: 1px solid rgba(47, 164, 255, 0.25);
+}
+
+.barbero-card:hover {
+  border-color: #2fa4ff;
+}
+
+.barbero-foto {
+  background: linear-gradient(145deg, #123451, #02060b);
+}
+
+.barbero-foto span {
+  color: #2fa4ff;
+}
+
+.barbero-etiqueta,
+.barbero-informacion h3 {
+  color: #2fa4ff;
+}
+
+.barbero-informacion p {
+  color: #a9b7c6;
+}
+
+.barbero-boton {
+  background: #2fa4ff;
+  color: #02060b;
+  border: 1px solid #2fa4ff;
+}
+
+.barbero-boton:hover {
+  background: transparent;
+  color: #2fa4ff;
+}
+
+
+/* ==================================
+   IDENTIDAD AZUL - MIS RESERVACIONES
+================================== */
+
+.mis-reservaciones-seccion {
+  background: transparent;
+  color: #ffffff;
+}
+
+.mis-reservaciones-encabezado span {
+  color: #2fa4ff;
+}
+
+.mis-reservaciones-encabezado h1 {
+  color: #ffffff;
+}
+
+.mis-reservaciones-encabezado p {
+  color: #a9b7c6;
+}
+
+.reservacion-tarjeta {
+  background: #081522;
+  border: 1px solid rgba(47, 164, 255, 0.3);
+  border-radius: 12px;
+}
+
+.reservacion-tarjeta-encabezado h2 {
+  color: #2fa4ff;
+}
+
+.reservacion-datos {
+  color: #c1ceda;
+}
+
+.reservacion-datos strong {
+  color: #ffffff;
+}
+
+.estado-reserva.activa {
+  color: #65c98b;
+}
+
+.estado-reserva.cancelada {
+  color: #e07878;
+}
+
+.cancelar-reserva-boton {
+  padding: 12px 18px;
+  background: transparent;
+  border: 1px solid #2fa4ff;
+  color: #2fa4ff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.cancelar-reserva-boton:hover {
+  background: #2fa4ff;
+  color: #02060b;
+}
+
+.sin-reservaciones {
+  text-align: center;
+  padding: 45px 20px;
+  background: #081522;
+  border: 1px solid rgba(47, 164, 255, 0.3);
+  border-radius: 12px;
+  color: #ffffff;
+}
+
+.sin-reservaciones h2 {
+  color: #ffffff;
+}
+
+.sin-reservaciones p {
+  color: #a9b7c6;
+}
+
+/* DISPONIBILIDAD POR BARBERO */
+
+.barberos-disponibilidad {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.barbero-disponibilidad-boton {
+  flex: 1;
+  min-width: 100px;
+  padding: 13px 18px;
+  background: #081522;
+  color: #fff;
+  border: 1px solid rgba(47, 164, 255, 0.4);
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.barbero-disponibilidad-boton:hover,
+.barbero-disponibilidad-seleccionado {
+  background: #2fa4ff;
+  color: #02060b;
+  border-color: #2fa4ff;
+}
+
+.barbero-disponibilidad-boton:focus-visible,
+.horario-boton:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+.horario-boton:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.calendario-flecha:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* ==================================
+   PANEL DEL BARBERO - IDENTIDAD AZUL
+================================== */
+
+.panel-barbero {
+  min-height: 80vh;
+  padding: 110px 8% 70px;
+  background: transparent;
+  color: #ffffff;
+}
+
+.panel-barbero-encabezado {
+  margin-bottom: 35px;
+}
+
+.panel-barbero-etiqueta {
+  color: #2fa4ff;
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.panel-barbero-encabezado h1 {
+  margin: 12px 0;
+  color: #ffffff;
+  font-size: 36px;
+}
+
+.panel-barbero-encabezado p {
+  color: #a9b7c6;
+}
+
+.panel-barbero-perfil {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+  color: #c1ceda;
+  font-size: 13px;
+}
+
+.panel-barbero-perfil span:first-child {
+  color: #2fa4ff;
+  font-weight: bold;
+}
+
+.panel-barbero-estadisticas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 45px;
+}
+
+.panel-barbero-estadistica {
+  padding: 25px;
+  background: #081522;
+  border: 1px solid rgba(47, 164, 255, 0.25);
+  border-radius: 12px;
+  transition: 0.3s ease;
+}
+
+.panel-barbero-estadistica:hover {
+  border-color: #2fa4ff;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(47, 164, 255, 0.1);
+}
+
+.panel-barbero-estadistica span {
+  display: block;
+  color: #a9b7c6;
+  font-size: 14px;
+}
+
+.panel-barbero-estadistica strong {
+  display: block;
+  margin-top: 12px;
+  color: #2fa4ff;
+  font-size: 30px;
+}
+
+.panel-barbero-titulo {
+  margin-bottom: 25px;
+}
+
+.panel-barbero-titulo h2 {
+  color: #ffffff;
+  font-size: 25px;
+  margin-bottom: 8px;
+}
+
+.panel-barbero-titulo p {
+  color: #a9b7c6;
+}
+
+.panel-barbero-vacio {
+  padding: 45px 20px;
+  text-align: center;
+  background: #081522;
+  border: 1px solid rgba(47, 164, 255, 0.25);
+  border-radius: 12px;
+}
+
+.panel-barbero-vacio h3 {
+  color: #ffffff;
+}
+
+.panel-barbero-vacio p {
+  margin-top: 10px;
+  color: #a9b7c6;
+}
+
+.panel-barbero-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.panel-barbero-tarjeta {
+  padding: 22px;
+  background: #081522;
+  border: 1px solid rgba(47, 164, 255, 0.25);
+  border-radius: 12px;
+  transition: 0.3s ease;
+}
+
+.panel-barbero-tarjeta:hover {
+  border-color: #2fa4ff;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.panel-barbero-tarjeta-encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.panel-barbero-tarjeta-encabezado h3 {
+  margin-bottom: 6px;
+  color: #ffffff;
+}
+
+.panel-barbero-tarjeta-encabezado span {
+  color: #a9b7c6;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.panel-barbero-estado {
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 11px !important;
+  font-weight: bold;
+}
+
+.panel-barbero-estado.activa {
+  color: #65c98b;
+  background: rgba(101, 201, 139, 0.12);
+}
+
+.panel-barbero-estado.cancelada {
+  color: #f08b8b;
+  background: rgba(240, 139, 139, 0.12);
+}
+
+.panel-barbero-datos {
+  display: grid;
+  gap: 12px;
+  color: #c1ceda;
+  font-size: 14px;
+}
+
+.panel-barbero-datos strong {
+  color: #ffffff;
+}
+
+.panel-barbero-cancelar {
+  width: 100%;
+  margin-top: 22px;
+  padding: 12px;
+  border: 1px solid #2fa4ff;
+  border-radius: 6px;
+  background: transparent;
+  color: #2fa4ff;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.panel-barbero-cancelar:hover {
+  background: #2fa4ff;
+  color: #02060b;
+}
+
+@media (max-width: 700px) {
+  .panel-barbero {
+    padding: 90px 5% 50px;
+  }
+
+  .panel-barbero-encabezado h1 {
+    font-size: 27px;
+  }
+
+  .panel-barbero-estadisticas {
+    grid-template-columns: 1fr;
+  }
+
+  .panel-barbero-tarjeta-encabezado {
+    flex-direction: column;
+  }
+}
+
+.panel-barbero-aceptar {
+  width: 100%;
+  margin-top: 20px;
+  padding: 13px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #2fa4ff;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.panel-barbero-aceptar:hover {
+  background: #1685df;
+}
+
+.panel-barbero-aceptar:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.panel-barbero-error {
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid #e05252;
+  border-radius: 8px;
+  background: rgba(224, 82, 82, 0.12);
+  color: #ff7777;
+}
+
+.panel-barbero-estado.pendiente {
+  color: #ffbd4a;
+}
+
+.panel-barbero-estado.confirmada {
+  color: #45d483;
+}
+
+.panel-barbero-estado.cancelada {
+  color: #ff6868;
+}
+
+.panel-barbero-estado.completada {
+  color: #2fa4ff;
+}
+
+/* ==========================================
+   NAVBAR BERRACOS BARBER
+   Menú desplegable para computadora y celular
+========================================== */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  overflow: visible;
+}
+
+.navbar-logo {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+/* Botón de tres barras: siempre visible */
+.navbar-menu-boton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  margin-left: auto;
+  padding: 9px;
+  border: 1px solid rgba(47, 164, 255, 0.65);
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  z-index: 2002;
+}
+
+.navbar-menu-boton span {
+  display: block;
+  width: 23px;
+  height: 2px;
+  flex: 0 0 2px;
+  border-radius: 5px;
+  background: #2fa4ff;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.navbar-menu-boton.activo span:first-child {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.navbar-menu-boton.activo span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-menu-boton.activo span:last-child {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Panel: oculto hasta pulsar el botón */
+.navbar-menu-contenido {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 40px;
+  width: 350px;
+  max-width: calc(100vw - 30px);
+  max-height: calc(100vh - 90px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 18px;
+  padding: 20px;
+  background: rgba(2, 6, 11, 0.98);
+  border: 1px solid rgba(47, 164, 255, 0.35);
+  border-top: 1px solid rgba(47, 164, 255, 0.35);
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.45);
+  z-index: 2001;
+  scrollbar-width: none;
+}
+
+.navbar-menu-contenido::-webkit-scrollbar {
+  display: none;
+}
+
+.navbar-menu-contenido.menu-abierto {
+  display: flex;
+}
+
+/* Opciones del menú */
+.navbar-menu-contenido .navbar-links {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 4px;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  white-space: normal;
+  list-style: none;
+}
+
+.navbar-menu-contenido .navbar-links li {
+  display: block;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.navbar-menu-contenido .navbar-links li > button {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 42px;
+  height: auto;
+  padding: 11px 10px;
+  text-align: left;
+  white-space: normal;
+}
+
+.navbar-menu-contenido .navbar-links li > button::after {
+  bottom: 4px;
+}
+
+/* Usuario y cierre de sesión */
+.navbar-menu-contenido .navbar-usuario {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 13px;
+  width: 100%;
+  max-width: none;
+  padding-top: 16px;
+  border-top: 1px solid rgba(47, 164, 255, 0.22);
+  color: #ffffff;
+  text-align: left;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.4;
+}
+
+.navbar-menu-contenido .navbar-usuario .navbar-login,
+.navbar-menu-contenido .navbar-usuario .navbar-cerrar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  min-height: 42px;
+  white-space: nowrap;
+}
+
+/* Ajustes para celular */
+@media (max-width: 600px) {
+  .navbar {
+    height: 75px;
+    padding: 0 20px;
+  }
+
+  .navbar-logo {
+    font-size: 17px;
+  }
+
+  .navbar-menu-contenido {
+    right: 0;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0 0 10px 10px;
+  }
+}
+
+.panel-barbero-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.panel-barbero-cancelar,
+.panel-barbero-asistencia,
+.panel-barbero-no-asistencia {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.panel-barbero-cancelar {
+  background: #a83232;
+  color: white;
+}
+
+.panel-barbero-cancelar:hover {
+  background: #d13c3c;
+}
+
+.panel-barbero-asistencia {
+  background: #16834a;
+  color: white;
+}
+
+.panel-barbero-asistencia:hover {
+  background: #20a961;
+}
+
+.panel-barbero-no-asistencia {
+  background: #555b65;
+  color: white;
+}
+
+.panel-barbero-no-asistencia:hover {
+  background: #707783;
+}
+
+.panel-barbero-acciones button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.servicio-imagen {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.barbero-card {
+  overflow: hidden;
+}
+
+.barbero-foto {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111820;
+}
+
+.barbero-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.barbero-foto span {
+  font-size: 48px;
+  font-weight: bold;
+  color: #2fa4ff;
+}
+
+.servicio-card {
+  overflow: hidden;
+}
+
+.servicio-imagen-contenedor {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #111820;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.servicio-imagen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.servicio-icono {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 55px;
+  color: #2fa4ff;
+}
+
+.corte-card {
+  overflow: hidden;
+}
+
+.corte-imagen-contenedor {
+  width: 100%;
+  height: 230px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #111820;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.corte-imagen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.login-password-contenedor {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.login-password-contenedor input {
+  width: 100%;
+  padding-right: 95px;
+}
+
+.login-mostrar-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  color: #2fa4ff;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 8px 4px;
+  z-index: 2;
+}
+
+.login-mostrar-password:hover {
+  color: #ffffff;
+}
